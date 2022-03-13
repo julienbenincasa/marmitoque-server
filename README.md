@@ -3,6 +3,7 @@ API Server for marmitoque project
 
 # How use the project
 This project is currently deployed using Heroku : https://marmitoque-server.herokuapp.com/
+(no current welcome page but you can try routes listed below)
 
 # Ressources
 
