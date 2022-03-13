@@ -28,7 +28,17 @@ router.post('/login', async (req, res) => {
   const cook = await axios.get('https://recipes-94c9.restdb.io/rest/cooks?q={\"email\": \"' + email + '\"}',
                                   {headers:{"x-apikey":"bb176f1b0465574c4ec90cc442aedeea5d90e"}})
 
-  if (!cook || cook.data[0].password !== password) {
+  /*if (!cook || cook.data[0].password !== password) {
+    res.status(401).json({ error: 'Email / password do not match.' })
+    return
+  }*/
+
+  if (cook.data.length !== 0) {
+    if (cook.data[0].password !== password) {
+      res.status(401).json({ error: 'Email / password do not match.' })
+      return
+    }
+  } else {
     res.status(401).json({ error: 'Email / password do not match.' })
     return
   }
