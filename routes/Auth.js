@@ -44,7 +44,9 @@ router.post('/login', async (req, res) => {
   }
 
   //génération du jwt
-  const userJwt = jwt.sign({ id: cook.data[0]._id }, process.env.SECRET, {expiresIn:'30m'})
+  const userJwt = jwt.sign({ id: cook.data[0]._id,
+                             email: cook.data[0].email,
+                             pseudo: cook.data[0].pseudo}, process.env.SECRET, {expiresIn:'30m'})
 
   res.json({ jwt: userJwt })
 })
