@@ -22,4 +22,5 @@ GET     /cooks/id
 POST    /cooks  
   
 POST    /auth/login  
+GET     /auth/me  
 
