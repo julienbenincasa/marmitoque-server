@@ -17,6 +17,7 @@ GET     /recipes
 POST    /recipes  
 PUT     /recipes/id  
 DELETE  /recipes/id  
+GET     /recipes/of/user
   
 GET     /cooks/id  
 POST    /cooks  
