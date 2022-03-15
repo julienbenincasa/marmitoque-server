@@ -27,7 +27,7 @@ router.post('/login', async (req, res) => {
   const {email,password} = req.body;
 
   if (!email || !password) {
-    res.status(401).json({ error: 'Email or password was not provided.' })
+    res.status(401).json({ error: 'E-mail ou mot de passe non renseigné.' })
     return
   }
 
@@ -41,11 +41,11 @@ router.post('/login', async (req, res) => {
 
   if (cook.data.length !== 0) {
     if (cook.data[0].password !== password) {
-      res.status(401).json({ error: 'Email / password do not match.' })
+      res.status(401).json({ error: 'E-mail ou mot de passe incorrect' })
       return
     }
   } else {
-    res.status(401).json({ error: 'Email / password do not match.' })
+    res.status(401).json({ error: 'E-mail ou mot de passe incorrect' })
     return
   }
 
