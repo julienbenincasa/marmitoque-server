@@ -5,9 +5,6 @@ const router = express.Router()
 const passport = require('passport')
 const jwtStrategy = require('../passport-jwt/JWT-Strategy')
 const jwt = require('jsonwebtoken')
-const cors = require('cors')
-
-router.use(cors())
 
 router.use(express.json())
 router.use(express.urlencoded({ extended: true }))

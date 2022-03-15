@@ -1,9 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const axios = require('axios')
-const cors = require('cors')
-
-router.use(cors())
 
 router.use(express.json())
 router.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
