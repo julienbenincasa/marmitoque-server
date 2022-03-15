@@ -72,4 +72,11 @@ router.delete('/:id', passport.authenticate('myJwtStrategy', { session: false })
 	res.json(delRecipe.data)
 })
 
+//recettes de l'utilisateur connecté
+router.get('/of/user', passport.authenticate('myJwtStrategy', { session: false }), async (req, res) => {
+	const myRecipes = await axios.get('https://recipes-94c9.restdb.io/rest/recipes?q={\"creator_id\":\"' + req.user.data[0]._id + '\"}',
+                                  {headers:{"x-apikey":"bb176f1b0465574c4ec90cc442aedeea5d90e"}})
+	res.json(myRecipes.data)
+})
+
 module.exports = router
